@@ -60,7 +60,10 @@ function CreatePost() {
     e.preventDefault();
     console.log(blogData);
     try {
-      const res = await axios.post("http://localhost:8081/api/post", blogData);
+      const res = await axios.post(
+        "https://blog-web-api-iota.vercel.app/api/post",
+        blogData
+      );
       console.log(res);
       window.location.reload();
     } catch (error) {

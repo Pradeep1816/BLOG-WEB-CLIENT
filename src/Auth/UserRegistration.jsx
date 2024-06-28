@@ -24,7 +24,7 @@ function UserRegistration() {
       } else {
         setError("");
         const res = await axios.post(
-          "http://localhost:8081/api/v1/auth/register",
+          "https://blog-web-api-iota.vercel.app/api/v1/auth/register",
           formData
         );
         setError(res.data.message);

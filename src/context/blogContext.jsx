@@ -18,7 +18,9 @@ const BlogProvider = (props) => {
   const getBlogs = async () => {
     dispatch({ type: "SET_isLoading" });
     try {
-      const res = await axios.get("http://localhost:8081/api/all-post");
+      const res = await axios.get(
+        "https://blog-web-api-iota.vercel.app/api/all-post"
+      );
       const blogs = res.data.blogs;
       dispatch({ type: "BLOGS_DATA", payload: blogs });
 
@@ -33,7 +35,9 @@ const BlogProvider = (props) => {
   const getSingleBlog = async (id) => {
     dispatch({ type: "SINGLE_LOADING" });
     try {
-      const res = await axios.get("http://localhost:8081/api/all-post");
+      const res = await axios.get(
+        "https://blog-web-api-iota.vercel.app/api/all-post"
+      );
       const singleBlog = res.data.blogs.find((blog) => blog._id === id);
       dispatch({ type: "SINGLE_BLOG", payload: singleBlog });
     } catch (error) {
